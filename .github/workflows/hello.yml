@@ -1,0 +1,16 @@
+name: Hello to the World
+
+on: 
+  push:
+    branches:
+      -main
+
+jobs:
+  greet_the_World:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Greet
+      run: |
+          echo "Hello everyone!"
+    
+    
