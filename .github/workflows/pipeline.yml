@@ -9,9 +9,9 @@ jobs:
   pipeline:
     runs-on: self-hosted
     steps:
-      - uses: actions/chekout@v4
-        with:
-          repository: ''
+      - name: Checkout code
+      - uses: actions/chekout@v5
+      - name: Set up
       - uses: actions/setup-node@v4
         with: 
           node-version: '20'
