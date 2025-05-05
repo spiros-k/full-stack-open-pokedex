@@ -10,7 +10,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Checkout code
-        uses: actions/chekout@v5
+        uses: actions/chekout@v4
       - name: Set up
         uses: actions/setup-node@v4
         with: 
