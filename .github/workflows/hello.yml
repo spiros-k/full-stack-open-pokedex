@@ -12,5 +12,3 @@ jobs:
     - name: Greet
       run: |
           echo "Hello everyone!"
-    
-    
