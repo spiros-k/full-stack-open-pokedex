@@ -1,0 +1,20 @@
+name: Hi World
+
+on: 
+  push:
+    branches:
+      -main
+
+jobs:
+  greet_the_World:
+    runs-on: self-hosted
+    steps:
+    - name: Greet
+      run: |
+          echo "Hello everyone!"
+          
+    - name: Current-Date
+      run: date
+      
+    - name: files
+      run: ls -l
