@@ -7,7 +7,7 @@ on:
 
 jobs:
   greet_the_World:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: Greet
       run: |
