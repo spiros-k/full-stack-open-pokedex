@@ -12,7 +12,9 @@ jobs:
     - name: Greet
       run: |
           echo "Hello everyone!"
+          
     - name: Current-Date
       run: date
+      
     - name: files
       run: ls -l
