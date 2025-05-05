@@ -9,7 +9,7 @@ import { MemoryRouter } from 'react-router-dom'
 
 //
 
-import React, { Suspense, useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { GlobalDebug } from "utils/remove-console";
 
 function App() {
