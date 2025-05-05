@@ -24,8 +24,8 @@ function App() {
       GlobalDebug(false);
   }, []);
 
-  console.log("I am just another dummy console log, 
-   suppose to be suppressed 🙂");
+  console.log(`I am just another dummy console log 
+   suppose to be suppressed 🙂`);
 
   return (
     <Suspense fallback={<h3>Loading...</h3>}>
