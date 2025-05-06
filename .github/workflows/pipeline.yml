@@ -20,6 +20,6 @@ jobs:
       - name: Lint
         run: npm install eslint @eslint/js --save-dev
       - name: Test
-        run: npm test
+        run: npm install babel-plugin-transform-remove-console --save-dev && npm test
       - name: Build
         run: npm run build
