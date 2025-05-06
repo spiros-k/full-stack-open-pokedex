@@ -22,4 +22,4 @@ jobs:
       - name: Build
         run: npm run build
       - name: Test
-        run: npm install --save-dev @testing-library/jest-dom@5.4.0 && npm test --verbose --silent=false DEBUG=*
+        run: npm ci --save-dev @testing-library/jest-dom@5.4.0 && npm test --verbose 
