@@ -8,7 +8,7 @@ import PokemonPage from '../src/PokemonPage'
 import { MemoryRouter } from 'react-router-dom'
 
 //
-
+import '@testing-library/jest-dom'
 //
 
 jest.mock('axios')
