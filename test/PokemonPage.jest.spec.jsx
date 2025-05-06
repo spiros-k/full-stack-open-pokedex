@@ -8,59 +8,11 @@ import PokemonPage from '../src/PokemonPage'
 import { MemoryRouter } from 'react-router-dom'
 
 //
-
-import { Suspense, useEffect } from "react";
-
-const GlobalDebug = (function () {
-  var savedConsole = console;
-  /**
-  * @param {boolean} debugOn
-  * @param {boolean} suppressAll
-  */
-  return function (debugOn, suppressAll) {
-    var suppress = suppressAll || false;
-    if (debugOn === false) {
-      // supress the default console functionality
-      console = {};
-      console.log = function () {};
-      // supress all type of consoles
-      if (suppress) {
-        console.info = function () {};
-        console.warn = function () {};
-        console.error = function () {};
-      } else {
-        console.info = savedConsole.info;
-        console.warn = savedConsole.warn;
-        console.error = savedConsole.error;
-      }
-    } else {
-      console = savedConsole;
-    }
-  };
-})();
-
-function App() {
-  /**
-   * @REMOVE_CONSOLES
-   * // remove the working of console logs
-   * // remove any accidental use of console logs
-   */
-  useEffect(() => {
-    (process.env.NODE_ENV === "production" ||
-     process.env.REACT_APP_ENV === "STAGING") &&
-      GlobalDebug(false);
-  }, []);
-
-  console.log(`I am just another dummy console log 
-   suppose to be suppressed 🙂`);
-
-  return (
-    <Suspense fallback={<h3>Loading...</h3>}>
-      <YourComponentsHere />
-    </Suspense>
-  );
+if (process.env.NODE_ENV === 'production') {
+  console.log = () => {}
+  console.error = () => {}
+  console.debug = () => {}
 }
-
 //
 
 jest.mock('axios')
