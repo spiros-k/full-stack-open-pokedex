@@ -7,9 +7,6 @@ import PokemonPage from '../src/PokemonPage'
 
 import { MemoryRouter } from 'react-router-dom'
 
-//
-import '@testing-library/jest-dom'
-//
 
 jest.mock('axios')
 
@@ -76,15 +73,7 @@ const next = {
   id: 134
 }
 
-function mute() {
-  console.log = function() {};
-  console.info = function() {};
-  console.warn = function() {};
-  console.error = function() {};
-}
-
 describe('<PokemonPage />', () => {
-  
   it('should render abilities', async () => {
     axiosMock.get.mockResolvedValueOnce({ data: pokemonList })
 
