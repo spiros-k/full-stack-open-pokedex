@@ -22,5 +22,5 @@ jobs:
       - name: Build
         run: npm run build
       - name: Test
-        run: npm install babel-plugin-transform-remove-console --save-dev && npm test
+        run: npm install --save-dev @testing-library/jest-dom && npm test
      
