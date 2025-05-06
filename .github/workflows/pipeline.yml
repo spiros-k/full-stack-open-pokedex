@@ -20,6 +20,6 @@ jobs:
       - name: Lint
         run: npm install eslint @eslint/js --save-dev
       - name: Build
-        run: npm run build
+        run: npm run build && npm i @babel/runtime
       - name: Test
         run: npm ci --save-dev @testing-library/jest-dom@5.4.0 && npm test --verbose 
