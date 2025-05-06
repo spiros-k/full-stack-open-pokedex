@@ -7,7 +7,6 @@ import PokemonPage from '../src/PokemonPage'
 
 import { MemoryRouter } from 'react-router-dom'
 
-
 jest.mock('axios')
 
 const pokemonList = {
@@ -116,9 +115,7 @@ describe('<PokemonPage />', () => {
 
     expect(screen.getByText('Previous')).toHaveAttribute('href', '/pokemon/ditto')
     
-    setTimout(() => {
-      expect(screen.getByText('Next')).toHaveAttribute('href', '/pokemon/vaporeon')
-    }, 2000)
+    await expect(screen.findByText('Next')).toHaveAttribute('href', '/pokemon/vaporeon')
     
       
   })
