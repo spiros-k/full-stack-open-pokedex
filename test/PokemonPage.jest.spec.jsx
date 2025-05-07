@@ -116,6 +116,8 @@ describe('<PokemonPage />', () => {
     expect(screen.getByText('Previous')).toHaveAttribute('href', '/pokemon/ditto')
     
     const element = await screen.findByText('Next')
+    console.log('element: ', element.outerHTML)
+    console.log('HREF: ', element.getAttribute('href'))
     console.log('Next is ', element.getAttribute('href')
     expect(element).not.toBeNull()
     expect(element.getAttribute('href')).toBe('/pokemon/vaporeon')
