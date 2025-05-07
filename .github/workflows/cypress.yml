@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build_and_cypress_test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -24,14 +24,12 @@ jobs:
       - name: Start app
         run: npm run start
 
-  cypress-tests:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
+      - name: Run Cypress
+        run: npm run cypress:open
       - name: e2e Tests
         uses: cypress-io/github-action@v5
         with:
-         command: npm run test:e2e
-         start: npm run start-prod
-         wait-on: http://localhost:5000
+          command: npm run test:e2e
+          start: npm run start-prod
+          wait-on: http://localhost:5000
          
