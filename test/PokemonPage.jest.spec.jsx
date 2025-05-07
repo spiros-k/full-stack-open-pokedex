@@ -118,12 +118,8 @@ describe('<PokemonPage />', () => {
     const element = await screen.findByText('Next')
     console.log('element: ', element.outerHTML)
     console.log('HREF: ', element.getAttribute('href'))
-    console.log('Next is ', element.getAttribute('href')
-    // expect(element).not.toBeNull()
-    // expect(element.getAttribute('href')).toBe('/pokemon/vaporeon')
-    // expect(element).toHaveAttribute('href', '/pokemon/vaporeon')
-    
-      
+    console.log('Next is: ', element.getAttribute('href')
+   
   })
 
   it('should not render previous and next urls if none exist', async () => {
