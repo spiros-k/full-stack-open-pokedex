@@ -2,3 +2,34 @@ name: Cypress Tests
 
 on: 
   push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Set up
+        uses: actions/setup-node@v4
+        with: 
+          node-version: '20'
+      - name: Install Depends
+        run: npm install 
+      - name: Lint
+        run: npm install eslint @eslint/js --save-dev 
+      - name: Build Env
+        run: npm run build
+
+  cypress-tests:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: e2e Tests
+        uses: cypress-io/github-action@v5
+        with:
+         command: npm run test:e2e
+         start: npm run start-prod
+         wait-on: http://localhost:5000
+         
