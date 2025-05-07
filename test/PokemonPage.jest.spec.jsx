@@ -119,6 +119,8 @@ describe('<PokemonPage />', () => {
     console.log('element: ', element.outerHTML)
     console.log('HREF: ', element.getAttribute('href'))
     console.log('Next is: ', element.getAttribute('href'))
+
+    expect(screen.getByText('Next')).toHaveAttribute('href', '/pokemon/vaporeon')
     
   })
 
