@@ -11,16 +11,29 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        
       - name: Set up
         uses: actions/setup-node@v4
         with: 
           node-version: '20'
+          
       - name: Install Depends
         run: npm install 
+        
       - name: Lint
         run: npm install eslint @eslint/js --save-dev 
+        
       - name: Build Env
         run: npm run build
+
+      - run: npm run start &
+        env:
+          CI: true
+
+      - uses: jakejarvis/wait-action@0.1.0
+        with:
+          url: http://localhost:5000
+          timeout: 60
         
       - name: Cypress Install
         run: npm i cypress
@@ -28,6 +41,9 @@ jobs:
       - name: e2e Tests
         uses: cypress-io/github-action@v5
         with:
+          browser: firefox
+          headed: false
+          build: npm run build
           command: npm run test:e2e
           start: npm run start-prod
           wait-on: http://localhost:5000
