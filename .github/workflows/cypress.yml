@@ -29,11 +29,6 @@ jobs:
       - run: npm run start &
         env:
           CI: true
-
-      - uses: jakejarvis/wait-action@0.1.0
-        with:
-          url: http://localhost:5000
-          timeout: 60
         
       - name: Cypress Install
         run: npm i cypress
