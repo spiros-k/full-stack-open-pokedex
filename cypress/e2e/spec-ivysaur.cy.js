@@ -6,8 +6,8 @@ describe('Pokedex', function() {
   })
 })
   
-describe('Pokedex', function() => {
-  it('ivysaur was selected', function() => {
+describe('Pokedex', function() {
+  it('ivysaur is clicked', function() {
     cy.visit('https://localhost:5000/ivysaur')
     cy.contains('chlorophyll')
   })
