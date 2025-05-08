@@ -7,7 +7,7 @@ on:
 
 jobs:
   build_and_cypress_test:
-    runs-on: self-hosted # ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
           node-version: '20'
           
       - name: Install Depends
-        run: npm install 
+        run: npm ci 
         
       - name: Lint
         run: npm install eslint @eslint/js --save-dev 
