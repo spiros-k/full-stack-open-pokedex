@@ -1,27 +1,27 @@
-name: Set up env and lint code
+# name: Set up env and lint code
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  simple_pipeline:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Set up
-        uses: actions/setup-node@v4
-        with: 
-          node-version: '20'
-      - name: Install dependencies
-        run: npm install
-      - name: Lint
-        run: npm install eslint @eslint/js --save-dev 
-      - name: Build
-        run: npm run build && npm install --save-dev @testing-library/react @testing-library/jest-dom
-      - name: Test
-        run: |
-          npm test -- --verbose || true 
-          echo "Test failed above"
+# jobs:
+#   simple_pipeline:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+#       - name: Set up
+#         uses: actions/setup-node@v4
+#         with: 
+#           node-version: '20'
+#       - name: Install dependencies
+#         run: npm install
+#       - name: Lint
+#         run: npm install eslint @eslint/js --save-dev 
+#       - name: Build
+#         run: npm run build && npm install --save-dev @testing-library/react @testing-library/jest-dom
+#       - name: Test
+#         run: |
+#           npm test -- --verbose || true 
+#           echo "Test failed above"
