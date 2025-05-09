@@ -1,19 +1,19 @@
-name: Hello World
+# name: Hello World
 
-on: 
-  push:
-    branches: [ main ]
+# on: 
+#   push:
+#     branches: [ main ]
 
-jobs:
-  greet_the_World:
-    runs-on: self-hosted
-    steps:
-    - name: Greet
-      run: |
-          echo "Hello everyone!"
+# jobs:
+#   greet_the_World:
+#     runs-on: self-hosted
+#     steps:
+#     - name: Greet
+#       run: |
+#           echo "Hello everyone!"
           
-    - name: Current-Date
-      run: date
+#     - name: Current-Date
+#       run: date
       
-    - name: files
-      run: ls 
+#     - name: files
+#       run: ls 
