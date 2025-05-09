@@ -8,16 +8,17 @@ describe('Pokedex', function() {
   it('ivysaur can be clicked', function() {
     cy.visit('http://localhost:5000')
     cy.contains('ivysaur').click()
-  })
-  
-})
-
-describe('Pokemon ivysaur', function() {
-  it('ivysaur page is open', function() {
-    cy.visit('http://localhost:5000')
-    cy.contains('ivysaur').click()
-    cy.visit('http://localhost:5000/pokemon/ivysaur')
     cy.contains('chlorophyll')
   })
   
 })
+
+// describe('Pokemon ivysaur', function() {
+//   it('ivysaur page is open', function() {
+//     cy.visit('http://localhost:5000')
+//     cy.contains('ivysaur').click()
+//     cy.visit('http://localhost:5000/pokemon/ivysaur')
+  
+//   })
+  
+// })
