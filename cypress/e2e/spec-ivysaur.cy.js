@@ -12,6 +12,11 @@ describe('Pokedex', function() {
   
 })
 
+before(function() {
+    cy.visit('http://localhost:5000')
+    cy.contains('ivysaur').click()
+})
+
 describe('Pokemon ivysaur', function() {
   it('ivysaur page is open', function() {
     cy.visit('http://localhost:5000/pokemon/ivysaur')
