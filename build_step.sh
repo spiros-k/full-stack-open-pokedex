@@ -2,9 +2,9 @@
 
 echo "Build script"
 
-chmod +rx .
+git clone https://github.com/spiros-k/full-stack-open-pokedex.git
 
-# git clone https://github.com/spiros-k/full-stack-open-pokedex.git
+chmod +rx .
 
 npm install
 
