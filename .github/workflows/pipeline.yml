@@ -1,4 +1,4 @@
-name: Set up env and lint code
+name: Build and deploy on Render
 
 on:
   push:
@@ -25,4 +25,5 @@ jobs:
         run: |
           npm test -- --verbose || true 
           echo "Test failed above"
-      
+      - name: Trigger deployment
+        run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
